@@ -122,3 +122,6 @@ C:\Users\boyca\OneDrive\Documents\Thuc tập nhóm\QL_NHANSU\QL_NHANSU\QL_NHANSU
 C:\Users\boyca\OneDrive\Documents\Thuc tập nhóm\QL_NHANSU\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.csproj.CopyComplete
 C:\Users\boyca\OneDrive\Documents\Thuc tập nhóm\QL_NHANSU\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.exe
 C:\Users\boyca\OneDrive\Documents\Thuc tập nhóm\QL_NHANSU\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.pdb
+C:\Users\boyca\OneDrive\Documents\GitHub\Quan_Ly_Nhan_Su\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.csprojAssemblyReference.cache
+C:\Users\boyca\OneDrive\Documents\GitHub\Quan_Ly_Nhan_Su\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.exe
+C:\Users\boyca\OneDrive\Documents\GitHub\Quan_Ly_Nhan_Su\QL_NHANSU\QL_NHANSU\obj\Debug\QL_NHANSU.pdb
