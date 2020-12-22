@@ -17,7 +17,7 @@ namespace QL_NHANSU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NhanVienNV());
+            Application.Run(new Login());
         }
     }
 }
