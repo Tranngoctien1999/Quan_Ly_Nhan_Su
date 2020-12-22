@@ -20,7 +20,7 @@ namespace QL_NHANSU.GUI
             txtname.Select();
         }
         
-        private void button6_Click(object sender, EventArgs e)
+        private void check()
         {
             if (txtname.Text == "" || txtpass.Text == "")
             {
@@ -46,9 +46,14 @@ namespace QL_NHANSU.GUI
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            check();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Login_Enter(object sender, EventArgs e)
@@ -64,6 +69,10 @@ namespace QL_NHANSU.GUI
         {
             
         }
-        
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -18,12 +18,15 @@ namespace QL_NHANSU.GUI
         public NhanVienNV()
         {
             InitializeComponent();
+            dgvNV.AutoGenerateColumns = false;
+            dgvTN.AutoGenerateColumns = false;
             init();
         }
         private void init()
         {
             var TBNV = context.NhanViens.ToList();
             dgvNV.DataSource = TBNV;
+            dgvNV.Refresh();
         }
         private void hienthi_TTNV(int row)
         {
@@ -142,15 +145,15 @@ namespace QL_NHANSU.GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
-            if (txtEmail.Text.Trim() == "" || txtchucvu.Text.Trim() == "" || txtdiachi.Text.Trim() == "" || txtluong.Text.Trim() == "" || txtSoDT.Text.Trim() == "" || txtSonv.Text.Trim() == "" || txtTen.Text.Trim() == "")
+
+            if (txtNgGS.Text=="Không có" || txtEmail.Text.Trim() == "" || txtchucvu.Text.Trim() == "" || txtdiachi.Text.Trim() == "" || txtluong.Text.Trim() == "" || txtSoDT.Text.Trim() == "" || txtSonv.Text.Trim() == "" || txtTen.Text.Trim() == "")
             {
                 MessageBox.Show("Chưa nhập đủ thông tin");
             }
 
             else
             {
-                NhanVien nv =context.NhanViens.Find(Convert.ToInt32(txtMaNV.Text));
+                NhanVien nv = context.NhanViens.Find(Convert.ToInt32(txtMaNV.Text));
                 nv.TenNV = txtTen.Text;
                 nv.NgaySinh = dtNS.Value;
                 nv.DChi = txtdiachi.Text;
@@ -168,6 +171,7 @@ namespace QL_NHANSU.GUI
                 nv.SoNVDuoiQuyen = Convert.ToInt32(txtSonv.Text);
                 nv.Email = txtEmail.Text;
                 context.SaveChanges();
+                init();
             }
         }
 
@@ -199,6 +203,8 @@ namespace QL_NHANSU.GUI
                 tn.QuanHe = txtQH.Text;
                 tn.GioiTinh = txtGTTN.Text;
                 context.SaveChanges();
+                dgvTN.DataSource = context.ThanNhans.Where(x => x.MaNV == manv).ToList();
+                dgvTN.Refresh();
             }
         }
 
@@ -228,7 +234,10 @@ namespace QL_NHANSU.GUI
                     context.ThanNhans.Add(tn);
                     context.SaveChanges();
                     kt = 0;
+                    int manv = Convert.ToInt32(txtMaNV_TN.Text);
+                    dgvTN.DataSource = context.ThanNhans.Where(x => x.MaNV == manv).ToList();
                     dgvTN.Refresh();
+                    MessageBox.Show("Thành công");
                 }
             }
         }
@@ -241,12 +250,13 @@ namespace QL_NHANSU.GUI
         private void btnXoaTn_Click(object sender, EventArgs e)
         {
             int manv_tn = Convert.ToInt32(txtMaNV_TN.Text);
-            var dsnv = context.ThanNhans.Where(x=>x.MaNV==manv_tn).OrderByDescending(x=>x.MaNV).ToList();
-            dsnv = dsnv.Where(x => x.TenTN == txtTenTN.Text).OrderByDescending(x => x.TenTN).ToList();
-            var tn = dsnv[0];
+            var dstn = context.ThanNhans.Where(x=>x.MaNV==manv_tn).OrderByDescending(x=>x.MaNV).ToList();
+            dstn = dstn.Where(x => x.TenTN == txtTenTN.Text).OrderByDescending(x => x.TenTN).ToList();
+            var tn = dstn[0];
             context.ThanNhans.Remove(tn);
             context.SaveChanges();
-            dgvNV.Refresh();
+            dgvTN.DataSource = context.ThanNhans.Where(x=>x.MaNV==manv_tn).ToList();
+            dgvTN.Refresh();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -260,7 +270,7 @@ namespace QL_NHANSU.GUI
             NhanVien nv = context.NhanViens.Find(Convert.ToInt32(txtMaNV.Text));
             context.NhanViens.Remove(nv);
             context.SaveChanges();
-            dgvNV.Refresh();
+            init();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -336,12 +346,26 @@ namespace QL_NHANSU.GUI
         {
             DuAnNV da_nv = new DuAnNV();
             da_nv.Visible = true;
+            this.Hide();
         }
 
         private void phânCôngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNV nv_da = new AddNV();
-            nv_da.Visible = true;
+           
+        }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PB pb = new PB();
+            pb.Visible = true;
+            this.Hide();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Visible = true;
+            this.Hide();
         }
     }
 }
