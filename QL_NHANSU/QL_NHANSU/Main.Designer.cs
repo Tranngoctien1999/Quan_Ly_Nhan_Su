@@ -48,8 +48,7 @@
             this.FormQl});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1762, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1142, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,14 +65,14 @@
             // btnDangky
             // 
             this.btnDangky.Name = "btnDangky";
-            this.btnDangky.Size = new System.Drawing.Size(224, 26);
+            this.btnDangky.Size = new System.Drawing.Size(160, 26);
             this.btnDangky.Text = "Đăng ký";
             this.btnDangky.Click += new System.EventHandler(this.btnDangky_Click);
             // 
             // btnDangxuat
             // 
             this.btnDangxuat.Name = "btnDangxuat";
-            this.btnDangxuat.Size = new System.Drawing.Size(224, 26);
+            this.btnDangxuat.Size = new System.Drawing.Size(160, 26);
             this.btnDangxuat.Text = "Đăng xuất";
             this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
             // 
@@ -111,11 +110,10 @@
             // panelMain
             // 
             this.panelMain.BackgroundImage = global::QL_NHANSU.Properties.Resources.ns;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 28);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1762, 712);
+            this.panelMain.Size = new System.Drawing.Size(1140, 638);
             this.panelMain.TabIndex = 2;
             // 
             // Main
@@ -123,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1762, 740);
+            this.ClientSize = new System.Drawing.Size(1142, 653);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -131,7 +129,7 @@
             this.MinimizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Quản lý nhân sự-made by ANHTTT team";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
